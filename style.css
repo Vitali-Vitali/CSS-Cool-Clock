@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+	padding: 0;
+}
+
+:root {
+    --body-background-color: #021121;
+    --clock-shadow: #546475;
+    --clock-background-color: #021121;
+    --clock-height: 300px;
+    --clock-width: 300px;
+    --clock-hour-arrow: red;
+    --clock-arrows: white;
+    --hour-arrow-size: 160px;
+    --min-arrow-size: 190px;
+    --sec-arrow-size: 220px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--body-background-color);
+}
+
+.clock-shape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clock-background-color);
+    border-radius: 100%;
+    width: var(--clock-width);
+    height: var(--clock-height);
+    box-shadow: 0px 0px 20px 10px var(--clock-shadow),
+    inset 0px 0px 10px 3px var(--clock-shadow);
+}
+
+.clock-shape:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--clock-arrows) ;
+    z-index: 999;
+}
+
+.clock-shape:after {
+    content: '';
+    position: absolute;
+    width: calc(var(--clock-width) - 50px);
+    height: calc(var(--clock-height) - 50px);
+    border-radius: 50%;
+    background-color: var(--clock-background-color) ;
+    z-index: 1;
+}
+
+.hour, .min, .sec {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+}
+
+.hour {
+    width: var(--hour-arrow-size);
+    height: var(--hour-arrow-size); 
+}
+
+.min {
+    width: var(--min-arrow-size);
+    height: var(--min-arrow-size); 
+}
+
+.sec {
+    width: var(--sec-arrow-size);
+    height: var(--sec-arrow-size); 
+}
+
+#hr {
+    width: 8px;
+    height: 80px;
+    background-color: var(--clock-hour-arrow); 
+    z-index: 9;
+    border-radius: 6px 6px 0 0;
+}
+
+#min {
+    width: 5px;
+    height: 95px;
+    background-color: var(--clock-arrows); 
+    z-index: 9;
+    border-radius: 6px 6px 0 0;
+}
+
+#sec {
+    width: 2px;
+    height: 140px;
+    background-color: var(--clock-arrows); 
+    z-index: 9;
+    border-radius: 6px 6px 0 0;
+}
+
+.line {
+    padding: 0;
+    margin: 0;
+    border-color: var(--clock-shadow);
+    height: calc(var(--clock-height) - 20px);
+    position: absolute;
+}
+
+.main {
+    border: 2px solid var(--clock-shadow) !important;
+}
+
+.l2 {
+    transform: rotateZ(30deg);
+}
+
+.l3 {
+    transform: rotateZ(60deg);
+}
+
+.l4 {
+    transform: rotateZ(90deg);
+}
+
+.l5 {
+    transform: rotateZ(120deg);
+}
+
+.l6 {
+    transform: rotateZ(150deg);
+}
